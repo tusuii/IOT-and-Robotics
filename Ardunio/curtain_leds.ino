@@ -1,9 +1,11 @@
-//optimized code
+//more optimized full DRY code
+
 int leds[] = {2, 3, 4, 5};
+int length = sizeof(leds)/sizeof(leds[0]);
 
 void setup() 
 {
-  for (int i = 0; i < sizeof(leds)/sizeof(leds[0]); i++) 
+  for (int i = 0; i < length; i++) 
   {
     pinMode(leds[i], OUTPUT);
   }
@@ -11,23 +13,49 @@ void setup()
 
 void loop() 
 {
-  for (int i = 0; i < sizeof(leds)/sizeof(leds[0]); i++) 
+  for (int i = 0; i < length; i++) 
   {
     logic(i);
   }
 
-  for (int i = sizeof(leds)/sizeof(leds[0]) - 1; i >= 0; i--) 
+  for (int i = length - 1; i >= 0; i--) 
   {
     logic(i);
   }
 }
 
-void logic(int i)
-{
-  digitalWrite(leds[i], HIGH);
-  delay(500);
-  digitalWrite(leds[i], LOW);
-}
+
+
+//optimized code
+// int leds[] = {2, 3, 4, 5};
+
+// void setup() 
+// {
+//   for (int i = 0; i < sizeof(leds)/sizeof(leds[0]); i++) 
+//   {
+//     pinMode(leds[i], OUTPUT);
+//   }
+// }
+
+// void loop() 
+// {
+//   for (int i = 0; i < sizeof(leds)/sizeof(leds[0]); i++) 
+//   {
+//     logic(i);
+//   }
+
+//   for (int i = sizeof(leds)/sizeof(leds[0]) - 1; i >= 0; i--) 
+//   {
+//     logic(i);
+//   }
+// }
+
+// void logic(int i)
+// {
+//   digitalWrite(leds[i], HIGH);
+//   delay(500);
+//   digitalWrite(leds[i], LOW);
+// }
 
 // non optimized code
 // ------------------------------------------------
