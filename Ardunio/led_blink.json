@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": -90, "left": 167, "attrs": { "color": "red" } }
+  ],
+  "connections": [
+    [ "led1:C", "uno:GND.1", "black", [ "h-28.4", "v105" ] ],
+    [ "led1:A", "uno:7", "red", [ "v48", "h35.4" ] ]
+  ],
+  "dependencies": {}
+}
