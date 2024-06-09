@@ -1,4 +1,5 @@
 //more optimized full DRY code
+// https://wokwi.com/projects/400217273586505729
 
 int leds[] = {2, 3, 4, 5};
 int length = sizeof(leds)/sizeof(leds[0]);
